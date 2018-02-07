@@ -1,0 +1,43 @@
+plugins {
+    id "java"
+    id "idea"
+    id "org.flywaydb.flyway" version "5.0.6"
+}
+
+group 'rsccorp.radiosys.com'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile("com.oracle:ojdbc6:11.2.0.4")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+loadConfiguration()
+
+def loadConfiguration() {
+    def environment = project.hasProperty('env') ? project.env : 'dev'
+    project.ext.set 'environment', environment
+    println "Environment is set to $environment"
+
+    def configFile = file('config.groovy')
+    def config = new ConfigSlurper(environment).parse(configFile.toURI().toURL())
+    project.ext.set 'config', config
+}
+
+def props = new Properties()
+file("$config.instanceProperties").withInputStream { props.load(it) }
+
+flyway {
+    url = props.getProperty("flyway.url")
+    driver = props.getProperty("flyway.driver")
+    user = props.getProperty("flyway.user")
+    password = props.getProperty("flyway.password")
+    table = props.getProperty("flyway.table")
+    baselineOnMigrate = props.getProperty("flyway.baselineOnMigrate")
+}
