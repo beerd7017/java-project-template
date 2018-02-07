@@ -1,4 +1,4 @@
-# Welcome to the New Project Template Repository
+# Welcome to the New Java Project Template Repository
 
 ## Purpose
 This repository contains a basic project setup for any new Java project and assumes that there will be some kind of database migrations as well. 
