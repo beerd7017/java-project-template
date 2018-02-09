@@ -95,41 +95,40 @@ In our various properties files we can specify anything specfic for an target en
 
 `dev.properties`
 	
-	flyway.url = jdbc:oracle:thin:@//cht-scan:1552/RDEV
+	flyway.url = *******
 	flyway.driver = oracle.jdbc.driver.OracleDriver
 	flyway.user = apps
 	flyway.password = apps
 	flyway.table = IBY_schema_version
 	flyway.baselineOnMigrate = true
-	ebs.applmgr.user = applrdev
-	ebs.applmgr.password = petsafe9374$
-	ebs.adopUser = apps
-	ebs.adopPassword = apps
-	ebs.webLogicPassword = petsafe9374
-	linux.server.internal = rscvm-tstebs15.rsccorp.radiosys.com
-	linux.server.external = rscvm-tstebs16.rsccorp.radiosys.com
+	ebs.applmgr.user = *******
+	ebs.applmgr.password = *******
+	ebs.adopUser = *******
+	ebs.adopPassword = *******
+	ebs.webLogicPassword = *******
+	linux.server.internal = *******
+	linux.server.external = *******
 
 `sandbox.properties`
 
-	flyway.url = jdbc:oracle:thin:@//cht-scan:1552/RSBX
-	flyway.driver = oracle.jdbc.driver.OracleDriver
-	flyway.user = apps
-	flyway.password = apps
+	flyway.url = ***********
+	flyway.driver = ***********
+	flyway.user = ***********
+	flyway.password = ***********
 	flyway.table = IBY_schema_version
 	flyway.baselineOnMigrate = true
-	ebs.applmgr.user = applrsbx
-	ebs.applmgr.password = appl1234$
-	ebs.adopUser = apps
-	ebs.adopPassword = apps
-	ebs.webLogicPassword = petsafe1234
-	linux.server.internal = rscvm-tstebs22.rsccorp.radiosys.com
-	linux.server.external = rscvm-tstebs23.rsccorp.radiosys.com
+	ebs.applmgr.user = ***********
+	ebs.applmgr.password = ***********
+	ebs.adopPassword = ***********
+	ebs.webLogicPassword = ***********
+	linux.server.internal = ***********
+	linux.server.external = ***********
 
 ## Understanding FlywayDB for Database Migrations
 
 [FlywayDB](https://flywaydb.org) is an excellent tool for executing database migrations. We will be using a FlywayDB plugin in conjuntion with our Gradle script.
 
-FlwayDB takes several different parameters and an exhustive list can be found [here](https://flywaydb.org/documentation/envvars).
+FlwayDB takes several different parameters and an exhaustive list can be found [here](https://flywaydb.org/documentation/envvars).
 
 We will be using the following parameters:
 
