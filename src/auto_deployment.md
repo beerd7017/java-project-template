@@ -152,7 +152,7 @@ Our TeamCity will be responsible for the execution of the builds. We will create
 
 ## What is Needed to Make Automated Builds and Deployments a Reality
 
-* Team members should not gethung up on the edge cases. This solves 99% of our database activities. The 1% can be handled later.
+* Team members should not get hung up on the edge cases. This solves 99% of our database activities. The 1% can be handled later.
 * Understanding that Oracle EBS is nothing but software and it isn't scary.
 * Understanding of our build and deployment process by all team members.
 * Create a new Oracle EBS repo for these deployments and archieve the current one. We will not be migrating files from the current repo. Instead we will start a new baseline. The reason being because the combined object repo is not an accurate representation of the Oracle instance. We can't build the instance from source code now so no need to move possibly inaccurate information.
