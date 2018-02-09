@@ -144,6 +144,9 @@ We will be using the following parameters:
 
 
 
-## Understanding TeamCity Continous Integration
+## Understanding TeamCity Continuous Integration
+
+Our TeamCity will be responsible for the execution of the builds. We will create a new TeamCity project and define our VCS root as our repository.
+
 
 ## Using GitFlow
