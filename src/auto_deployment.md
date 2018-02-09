@@ -142,6 +142,8 @@ We will be using the following parameters:
 | flyway.table              | The name of Flyway's schema history table. By default (single-schema mode) the schema history table is placed in the default schema for the connection provided by the datasource. When the flyway.schemas property is set (multi-schema mode), the schema history table is placed in the first schema of the list. |
 | flyway.baselineOnMigrate  | Whether to automatically call baseline when migrate is executed against a non-empty schema with no metadata table. This schema will then be baselined with the baselineVersion before executing the migrations. Only migrations above baselineVersion will then be applied. This is useful for initial Flyway production deployments on projects with an existing DB. Be careful when enabling this as it removes the safety net that ensures Flyway does not migrate the wrong database in case of a configuration mistake! |
 
+When FlywayDB executes migration scripts it will do so in order. It's important for the developer to write their migration scripts in the correct order and with the correct nameing convention in order for FlywayDB to execute them. Migration scripts are to be stored in `src/main/resources/db/migrations/`. This is the default directory where FlywayDB expects migrations scripts. Migration scripts need to adhere to the following naming convention: `V1.1__Create_Table_HelloWorld.sql`
+Flyway will create a new table to track the history of migrations. This is defined by the `flyway.table` parameter.
 
 
 ## Understanding TeamCity Continuous Integration
