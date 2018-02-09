@@ -146,7 +146,17 @@ We will be using the following parameters:
 
 ## Understanding TeamCity Continuous Integration
 
-Our TeamCity will be responsible for the execution of the builds. We will create a new TeamCity project and define our VCS root as our repository.
+Our TeamCity will be responsible for the execution of the builds. We will create a new TeamCity project and define our VCS root as our repository. We will setup multiple build configurations for each environment and define the gradle tasks to be executed when a build is triggered. We we also setup build triggers as appropriate for each environment.
 
+## What is Needed to Make Automated Builds and Deployments a Reality
 
-## Using GitFlow
+* Team members not getting hung up on the edge cases. This solves 99% of our database activities. The 1% can be handled later.
+* Understanding that Oracle EBS is nothing but software and it isn't scary.
+* Understanding of our build and deployment process by all team members.
+* Create a new Oracle EBS repo for these deployments and archieve the current one. We will not be migrating files from the current repo. Instead we will start a new baseline. The reason being because the combined object repo is not an accurate representation of the Oracle instance. We can't build the instance from source code now so no need to move possibly inaccurate information.
+* All teams to follow GitFlow and submit pull requests to the release branch when ready for migration.
+* Pull requests will serve as the approval for migration from this point forward.
+* Release Manager to create release branches and merge into branches for the target environments to trigger the builds.
+* Properties for protected environments to be provided to the TeamCity build agents.
+* TeamCity project and build configuration to be created.
+* Expand the build script to handle application side deployments for instance Java applications. Currently the iStore repo's build script can migrate automatically to development and sandbox but should be refactored to reduce complexity and leverage the `.properties` files.
