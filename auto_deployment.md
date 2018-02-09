@@ -127,6 +127,21 @@ In our various properties files we can specify anything specfic for an target en
 
 ## Understanding FlywayDB for Database Migrations
 
+[FlywayDB](https://flywaydb.org) is an excellent tool for executing database migrations. We will be using a FlywayDB plugin in conjuntion with our Gradle script.
+
+FlwayDB takes several different parameters and an exhustive list can be found [here](https://flywaydb.org/documentation/envvars).
+
+We will be using the following parameters:
+
+| Parameter                 | Description   |
+| ------------------------- | -------------:|
+| flyway.url                | The jdbc url to use to connect to the database. |
+| flyway.driver             | The fully qualified classname of the JDBC driver to use to connect to the database. |
+| flyway.user               | The user to use to connect to the database. |
+| flyway.password           | The password to use to connect to the database. |
+| flyway.table              | The name of Flyway's schema history table. By default (single-schema mode) the schema history table is placed in the default schema for the connection provided by the datasource. When the flyway.schemas property is set (multi-schema mode), the schema history table is placed in the first schema of the list. |
+| flyway.baselineOnMigrate  | Whether to automatically call baseline when migrate is executed against a non-empty schema with no metadata table. This schema will then be baselined with the baselineVersion before executing the migrations. Only migrations above baselineVersion will then be applied. This is useful for initial Flyway production deployments on projects with an existing DB. Be careful when enabling this as it removes the safety net that ensures Flyway does not migrate the wrong database in case of a configuration mistake! |
+
 
 
 ## Understanding TeamCity Continous Integration
