@@ -5,6 +5,7 @@ The following document outlines the Automated builds and deployments for Oracle 
 
 # Table of Contents
     * Pratical
+        Automated deployment are practical because they are configurable for the needs of the environment. For instance, to deploy changes to development we can use a .git commit trigger to start the build immediately. This doesn't require any involvement from management or database administrators to perform. Alternatively, for more gated environments like production deployments can only be triggered by the personelle with the approiate access.
     * Safety
     * Effecient
     * Repeatable
