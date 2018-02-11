@@ -3,7 +3,7 @@
 ## Purpose
 This repository contains a basic project setup for any new Java project and assumes that there will be some kind of database migrations as well. 
 
-##Rules of the Repository
+## Rules of the Repository
 * Master branch is production, period.
 * Do not commit to master, please work off the development branch.
 * When working locally, try to work in feature branches.
